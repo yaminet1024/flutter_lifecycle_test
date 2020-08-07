@@ -1,0 +1,13 @@
+include ':app'
+setBinding(new Binding([gradle: this]))
+evaluate(new File(
+  settingsDir,
+  '../flutter_lifecycle_test/.android/include_flutter.groovy'
+))
+rootProject.name = "test"
+
+include ':flutter_lifecycle_test'
+project(':flutter_lifecycle_test').projectDir = new File('../flutter_lifecycle_test')
+
+include ':flutter_lifecycle_test'
+project(':flutter_lifecycle_test').projectDir = new File('../flutter_lifecycle_test')
